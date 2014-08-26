@@ -10,7 +10,6 @@ URxvt.matcher.button: 	1
 
 URxvt*buffered: true
 URxvt*cursorBlink: true
-URxvt*underlineColor: yellow
 URxvt*depth: 32
 URxvt*borderless: 1
 URxvt*scrollBar: false
@@ -64,6 +63,7 @@ URxvt.foreground:            S_base00
 URxvt.cursorColor:           S_base1
 URxvt.pointerColorBackground:S_base01
 URxvt.pointerColorForeground:S_base1
+URxvt.underlineColor:        S_base3
 
 !! black dark/light
 URxvt.color0:                S_base02
