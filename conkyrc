@@ -34,7 +34,7 @@ color2 cc9393
 TEXT
 ${font Droid Mono:size=9}
 ${stippled_hr 1 1}
-${alignr}System
+${color2}${alignr}System
 ${color1}kernel${alignr}${color0}${kernel}
 ${color1}hostname${alignr}${color0}${nodename}
 ${color1}uptime${alignr}${color0}$uptime

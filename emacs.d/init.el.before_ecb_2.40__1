@@ -11,8 +11,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ecb-layout-name "left13")
- '(ecb-options-version "2.40")
  '(ede-project-directories (quote ("/home/michael/work/sml/homer" "/home/michael")))
  '(inhibit-startup-screen t))
 (custom-set-faces
@@ -24,21 +22,34 @@
 
 (load-theme 'tango t)
 
-;; No backup files
-(setq make-backup-files nil)
 
 ;; Load CEDET
-(load-file "~/.emacs.d/emacs-rc-cedet.el")
+(load-file "/home/michael/src/cedet/cedet-devel-load.el")
 
-;; Setup line numbering
-(require 'linum)
-(global-linum-mode 1)
-;(setq linum-format “%4d “)
+;; Enable Semantic
+(semantic-mode 1)
 
-;; c/c++ style setup
-(require 'google-c-style)
-(add-hook 'c-mode-common-hook 'google-set-c-style)
-(add-hook 'c-mode-common-hook 'google-make-newline-indent)
-(setq c-indent-tabs-mode t
-      c-toggle-hungry-state t
-      c-basic-offset 2)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-summary-mode t)
+(add-to-list 'semantic-default-submodes 'global-semantic-idle-completions-mode t)
+(add-to-list 'semantic-default-submodes 'global-cedet-m3-minor-mode t)
+
+(require 'semantic/ia)
+
+(require 'semantic/bovine/gcc)
+
+(defun my-semantic-hook ()
+  (imenu-add-to-menubar "TAGS"))
+(add-hook 'semantic-init-hooks 'my-semantic-hook)
+
+;; Enable GNU Global
+(when (cedet-gnu-global-version-check t)
+  (semanticdb-enable-gnu-global-databases 'c-mode)
+  (semanticdb-enable-gnu-global-databases 'c++-mode))
+
+;; Enable EDE (Project Management) features
+(global-ede-mode t)
+
+
+;; Load ECB
+(add-to-list 'load-path "/home/michael/src/ecb")
+(require 'ecb)
