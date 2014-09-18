@@ -7,3 +7,5 @@
 export ALTERNATE_EDITOR=""
 export EDITOR=emc
 
+export JAVA_HOME=/usr/lib/jvm/java-default-runtime
+
