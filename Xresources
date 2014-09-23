@@ -17,7 +17,7 @@ URxvt*loginShell: true
 Urxvt*secondaryScroll:  true    # Enable Shift-PageUp/Down in screen
 URxvt*saveLines: 5000
 
-URxvt.geometry: 135x68
+URxvt.geometry: 230x68
 
 
 !! drop in Solarized colorscheme for Xresources/Xdefaults
