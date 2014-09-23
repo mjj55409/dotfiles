@@ -77,18 +77,18 @@ ${color1}/virtualmachines ${alignr}${color0}${fs_free /virtualmachines}/${fs_siz
 ${fs_bar /virtualmachines}
 ${color0}${stippled_hr 1 1}
 ${color2}${alignr}Network
-${if_up enp5s0f2}
-  ${color1}Wired
-  ${color1}IP${color0}$alignr${addr enp5s0f2}
-  ${color1}down${color0} ${downspeed enp5s0f2}${alignr}${color1}up${color0} ${upspeed enp5s0f2}
-  ${else} ${if_up wlp6s0}
-    ${color1}SSID${color0}$alignr${wireless_essid wlp6s0}
-    ${color1}IP${color0}$alignr${addr wlp6s0}
-    ${color1}signal${color0}$alignr${wireless_link_qual_perc wlp6s0}%
-    ${color1}${wireless_link_bar wlp6s0}
-    ${color1}down${color0} ${downspeed wlp6s0}${alignr}${color1}up${color0} ${upspeed wlp6s0}
-  ${endif}
-${endif}
+#${if_up enp5s0f2}
+#  ${color1}Wired
+#  ${color1}IP${color0}$alignr${addr enp5s0f2}
+#  ${color1}down${color0} ${downspeed enp5s0f2}${alignr}${color1}up${color0} ${upspeed enp5s0f2}
+#  ${else} ${if_up wlp6s0}
+${color1}SSID${color0}$alignr${wireless_essid wlp6s0}
+${color1}IP${color0}$alignr${addr wlp6s0}
+${color1}signal${color0}$alignr${wireless_link_qual_perc wlp6s0}%
+${color1}${wireless_link_bar wlp6s0}
+${color1}down${color0} ${downspeed wlp6s0}${alignr}${color1}up${color0} ${upspeed wlp6s0}
+#  ${endif}
+#${endif}
 ${stippled_hr 1 1}
 ${color2}${alignr}Time${color}
 ${color1}Local: $alignr ${time %H:%M}

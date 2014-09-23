@@ -5,15 +5,16 @@
 #
 
 xrdb -merge ~/.Xresources &
-(sleep 1s && compton ~/.compton.conf) &
-(sleep 1s && nitrogen --restore) &
+compton ~/.compton.conf &
+nitrogen --restore &
 (sleep 2s && urxvtd -q -f -o) &
-(sleep 2s && tint2) &
-(sleep 1s && conky) &
-(sleep 2s && xfce4-power-manager) &
-(sleep 1s && parcellite) &
-(sleep 1s && xscreensaver -no-splash) &
-(sleep 1s && pidgin ) &
+tint2 &
+conky &
+xfce4-power-manager &
+wicd-client --tray &
+parcellite &
+xscreensaver -no-splash &
+pidgin &
 
 # If you want to use GNOME config tools...
 #
