@@ -7,14 +7,15 @@
 xrdb -merge ~/.Xresources &
 compton ~/.compton.conf &
 nitrogen --restore &
-(sleep 2s && urxvtd -q -f -o) &
-tint2 &
+wicd-client --tray &
+urxvtd -q -f -o &
+(sleep 2s && tint2 &)
 conky &
 xfce4-power-manager &
-wicd-client --tray &
 parcellite &
 xscreensaver -no-splash &
 pidgin &
+(sleep 2s && thunderbird &)
 
 # If you want to use GNOME config tools...
 #
