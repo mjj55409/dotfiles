@@ -12,3 +12,5 @@ alias ls='ls -l --color=auto'
 
 #PS1='[\u@\h \W]\$ '
 PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+alias gs='git status'

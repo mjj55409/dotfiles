@@ -7,5 +7,6 @@
 export ALTERNATE_EDITOR=""
 export EDITOR=emc
 
-export JAVA_HOME=/usr/lib/jvm/java-default-runtime
+DJANGO_CONFIGURATION=Local
 
+export PATH=$PATH:/home/michael/.gem/ruby/2.2.0/bin
